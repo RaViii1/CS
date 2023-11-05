@@ -1,0 +1,17 @@
+@model int
+
+@{
+    int maxRating = 5;
+    int filledStars = Model;
+    int emptyStars = maxRating - filledStars;
+}
+
+@foreach (var _ in Enumerable.Range(0, filledStars))
+{
+    <span title="@Model" style="color:gold;">&#x2605;</span>
+}
+
+@foreach (var _ in Enumerable.Range(0, emptyStars))
+{
+    <span title="@Model" style="color:gray;">&#x2606;</span>
+}
